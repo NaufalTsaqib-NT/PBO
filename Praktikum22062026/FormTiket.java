@@ -51,9 +51,12 @@ public class FormTiket extends javax.swing.JFrame {
         txtBayar = new javax.swing.JTextField();
         txtDiskon = new javax.swing.JTextField();
         txtTotal = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnHitung = new javax.swing.JButton();
         btnReset = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        txtUang = new javax.swing.JTextField();
+        btnSelesai = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -134,10 +137,10 @@ public class FormTiket extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Hitung");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnHitung.setText("Hitung");
+        btnHitung.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnHitungActionPerformed(evt);
             }
         });
 
@@ -155,40 +158,27 @@ public class FormTiket extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setText("Masukkan Uang");
+
+        btnSelesai.setText("Selesai");
+        btnSelesai.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSelesaiActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(113, 113, 113)
-                .addComponent(lblJudul, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
-                .addGap(117, 117, 117))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(17, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(lblTiket, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtJumlah, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
-                                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(35, 35, 35)))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(lblDiskon, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(54, 54, 54))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(lblTotal)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lblTujuan)
@@ -204,25 +194,47 @@ public class FormTiket extends javax.swing.JFrame {
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addComponent(cbKelas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(btnHarga)))
-                                .addGap(18, 18, Short.MAX_VALUE))
+                                        .addComponent(btnHarga))
+                                    .addComponent(lblJudul, javax.swing.GroupLayout.DEFAULT_SIZE, 261, Short.MAX_VALUE))
+                                .addGap(19, 33, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(lblBayar)
-                                .addGap(18, 18, 18)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtHarga)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(14, 14, 14)
-                                        .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(txtDiskon, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(txtBayar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 0, Short.MAX_VALUE)))))
-                .addContainerGap())
+                                        .addComponent(lblTiket, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtJumlah, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(lblDiskon, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(lblTotal)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel1)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(txtUang, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(lblBayar)
+                                                .addGap(51, 51, 51)
+                                                .addComponent(txtBayar, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addGap(18, 18, 18)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(14, 14, 14)
+                                .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtHarga)
+                            .addComponent(txtTotal)
+                            .addComponent(txtDiskon))
+                        .addContainerGap(19, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnSelesai)
+                .addGap(210, 210, 210))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(213, 213, 213)
+                .addComponent(btnHitung, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -235,16 +247,13 @@ public class FormTiket extends javax.swing.JFrame {
                     .addComponent(rbBkt)
                     .addComponent(rbSolok)
                     .addComponent(rbPar))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnHarga, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(1, 1, 1))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(lblKelas)
-                        .addComponent(cbKelas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtHarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(26, 26, 26)
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblKelas)
+                    .addComponent(cbKelas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtHarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnHarga, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblTotal)
@@ -253,13 +262,20 @@ public class FormTiket extends javax.swing.JFrame {
                 .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblDiskon)
-                    .addComponent(txtDiskon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
-                .addGap(25, 25, 25)
+                    .addComponent(txtDiskon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtBayar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblBayar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                    .addComponent(lblBayar)
+                    .addComponent(txtBayar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(14, 14, 14)
+                .addComponent(btnHitung)
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtUang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(21, 21, 21)
+                .addComponent(btnSelesai)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnReset)
                     .addComponent(btnExit))
@@ -334,7 +350,7 @@ public class FormTiket extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTotalActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnHitungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHitungActionPerformed
         try{
             int jumlah = Integer.parseInt(txtJumlah.getText());
             if (jumlah < 0){
@@ -357,7 +373,7 @@ public class FormTiket extends javax.swing.JFrame {
             txtJumlah.setText("");
             txtJumlah.requestFocus();
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnHitungActionPerformed
 
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
         txtHarga.setText("");
@@ -376,6 +392,63 @@ public class FormTiket extends javax.swing.JFrame {
         } else {
         }
     }//GEN-LAST:event_btnExitActionPerformed
+
+    private void btnSelesaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelesaiActionPerformed
+        try {
+            double uang = Double.parseDouble(txtUang.getText());
+            int jumlah = Integer.parseInt(txtJumlah.getText());
+            
+            if (jumlah < 0){
+                JOptionPane.showMessageDialog(this, "Jumlah tiket gak bisa min", "Tiket Error", ERROR_MESSAGE);
+                txtJumlah.setText("");
+                txtJumlah.requestFocus();
+                return;
+            }
+
+            double harga = Double.parseDouble(txtHarga.getText());
+            double total = jumlah * harga;
+            double diskon = 0;
+            
+            if(jumlah > 5 ){
+                diskon = 0.1 * total;
+            }
+            
+            double bayar = total - diskon;
+
+            if (uang < bayar) {
+                JOptionPane.showMessageDialog(this, "Uang pembayaran kurang!", "Pembayaran Error", ERROR_MESSAGE);
+                txtUang.requestFocus();
+                return; // Hentikan eksekusi jika uang kurang
+            }
+
+            double kembalian = uang - bayar;
+
+            String tujuan = "";
+            if (rbBkt.isSelected()) tujuan = "Bukittinggi";
+            else if (rbSolok.isSelected()) tujuan = "Solok";
+            else if (rbPar.isSelected()) tujuan = "Pariaman";
+
+            String kelas = cbKelas.getSelectedItem().toString();
+
+            String struk = "========== STRUK PESANAN ==========\n\n" +
+                           "Tujuan\t\t: " + tujuan + "\n" +
+                           "Kelas\t\t: " + kelas + "\n" +
+                           "Harga 1 Tiket\t: Rp " + harga + "\n" +
+                           "Jumlah Tiket\t: " + jumlah + "\n" +
+                           "Total Harga\t: Rp " + total + "\n" +
+                           "Diskon\t\t: Rp " + diskon + "\n" +
+                           "----------------------------------------------------\n" +
+                           "Total Bayar\t: Rp " + bayar + "\n" +
+                           "Uang Diterima\t: Rp " + uang + "\n" +
+                           "Kembalian\t: Rp " + kembalian + "\n\n" +
+                           "Terima Kasih Telah Menggunakan Bus Nusantara!";
+                           
+            JOptionPane.showMessageDialog(this, struk, "Detail Pesanan Tiket", JOptionPane.INFORMATION_MESSAGE);
+            
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Pastikan semua data sudah dihitung dan uang diisi dengan angka yang benar!", "Pesan Error", ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnSelesaiActionPerformed
 
     /**
      * @param args the command line arguments
@@ -414,9 +487,11 @@ public class FormTiket extends javax.swing.JFrame {
     private javax.swing.JButton btnExit;
     private javax.swing.ButtonGroup btnGroupTujuan;
     private javax.swing.JButton btnHarga;
+    private javax.swing.JButton btnHitung;
     private javax.swing.JButton btnReset;
+    private javax.swing.JButton btnSelesai;
     private javax.swing.JComboBox<String> cbKelas;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblBayar;
     private javax.swing.JLabel lblDiskon;
     private javax.swing.JLabel lblJudul;
@@ -432,5 +507,6 @@ public class FormTiket extends javax.swing.JFrame {
     private javax.swing.JTextField txtHarga;
     private javax.swing.JTextField txtJumlah;
     private javax.swing.JTextField txtTotal;
+    private javax.swing.JTextField txtUang;
     // End of variables declaration//GEN-END:variables
 }
